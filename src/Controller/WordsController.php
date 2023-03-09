@@ -11,9 +11,10 @@ use App\Service\WordCheck;
 class WordsController extends AbstractController
 {
     #[Route('/')]
-    public function homepage(): Response
+    public function index(): Response
     {
         return $this->render('pages/index.html.twig', [
+            'points' => '0',
         ]);
     }
 
