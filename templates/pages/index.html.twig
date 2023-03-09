@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Word-game!{% endblock %}
+
+{% block body %}
+
+<div>
+   <h3> Your word: </h3>
+   <form action="/word" method="post">
+     <input type="text" name="newWord"><br>
+    <button type="submit"> Play </button>
+   </form>
+   <h3>Score:{{points}}</h3>
+</div>
+{% endblock %}
