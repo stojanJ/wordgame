@@ -15,6 +15,7 @@ class WordsController extends AbstractController
     {
         return $this->render('pages/index.html.twig', [
             'points' => '0',
+            'response' => '',
         ]);
     }
 
@@ -37,8 +38,19 @@ class WordsController extends AbstractController
                    $almostPalindromePoints = $wordCheck->checkIfAlmostPalindrome($newWord);
                    $points += $uniqueLettersPoints + $palindromePoints + $almostPalindromePoints;
                     }
+                   $response = $points;
+                   return $this->render('pages/index.html.twig', [
+                    'points' => $points,
+                    'response' => '',
+                ]);
+                //     za potrebe samo backend-a
+                //    return new Response('points:'.$points);
         }
-
-      return new Response('points:'.$points);
+        return $this->render('pages/index.html.twig', [
+            'points' => 0,
+            'response' => $response,
+        ]);
+     //     za potrebe samo backend-a
+    //   return new Response('response'.$response);
     }
 }

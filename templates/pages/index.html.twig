@@ -6,10 +6,11 @@
 
 <div>
    <h3> Your word: </h3>
-   <form action="/word" method="post">
+   <form action="/word" method="POST" enctype="multipart/form-data">
      <input type="text" name="newWord"><br>
     <button type="submit"> Play </button>
    </form>
+   <p>{{response}}<p>
    <h3>Score:{{points}}</h3>
 </div>
 {% endblock %}
